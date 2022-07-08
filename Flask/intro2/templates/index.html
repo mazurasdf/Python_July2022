@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<style>
+    .textcolor{
+        color: {{color}};
+    }
+</style>
+<body>
+    {% if times >= 15 %}
+        <marquee><h1 class="textcolor">that's too much, man!</h1></marquee>
+
+    {% else %}
+        {% for i in range(times) %}
+            <marquee><h1 class="textcolor">Welcome, {{name.upper()}}</h1></marquee>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        {% for album in album_list %}
+            <div class="albumBox">
+                <img src="{{ url_for('static', filename=album['cover_url'])}}" alt="cover">
+                <h2>{{album["name"]}}</h2>
+                <h3><em>by {{album["artist"]}}</em></h3>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!--{# <script src="{{ url_for('static', filename='js/script.js')}}"></script> #}-->
+</body>
+</html>
